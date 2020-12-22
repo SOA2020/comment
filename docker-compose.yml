@@ -1,0 +1,18 @@
+version: '3'
+services:
+  comment_db:
+    image: postgres:alpine
+    volumes:
+      - ./.persistence/db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - 15432:5432
+  user:
+    build:
+      context: .
+    ports:
+      - 9001:9001
+    depends_on:
+      - comment_db
+    #command: "rake db:migrate"
