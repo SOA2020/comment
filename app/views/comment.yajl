@@ -1,6 +1,6 @@
 json = {
   id: comment.id,
-  itemId: comment.item_id,
+  commodityId: comment.commodity_id,
   userId: comment.user_id,
   createdAt: comment.created_at,
   updatedAt: comment.updated_at,

@@ -5,12 +5,12 @@ Sequel.migration do
   change do
     create_table(:comments) do
       primary_key :id
-      String :item_id, size: 255, null: false
+      String :commodity_id, size: 255, null: false
       String :user_id, size: 255, null: false
       String :content, text: true, null: false
       DateTime :created_at, null: false
       DateTime :updated_at, null: false
-      unique [:user_id, :item_id]
+      unique [:user_id, :commodity_id]
     end
   end
 end
